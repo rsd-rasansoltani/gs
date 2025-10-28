@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Matian Jani | Project Management & Design</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#0A0A0A', // Ultra Dark Background
+                        'card-bg': '#1F2937',   // Dark Slate Card Background
+                        'accent-color': '#3B82F6', // Modern Blue Accent
+                        'secondary-accent': '#60A5FA',
+                        'highlight-purple': '#8B5CF6', // For a richer color scheme
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Tahoma', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Global Styles for an Advanced Holding Company Look */
+        body {
+            /* Subtle dark gradient for depth */
+            background: linear-gradient(135deg, #0A0A0A 0%, #171717 100%);
+            color: #E5E7EB; /* Light gray text */
+            font-family: 'Tahoma', 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            color: #FFFFFF;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0; 
+            width: 75px;
+            height: 5px;
+            background-color: #3B82F6;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+        [dir="rtl"] .section-title::after {
+            left: auto;
+            right: 0;
+        }
+        .skill-bar {
+            height: 10px;
+            border-radius: 9999px;
+            background-color: #374151; /* Gray-700 */
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #3B82F6, #60A5FA);
+            transition: width 1s ease-in-out;
+        }
+        .text-justified {
+            text-align: justify;
+            hyphens: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Language Toggle Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="lang-toggle" onclick="changeLanguage()" class="px-4 py-2 bg-accent-color text-white font-bold rounded-lg shadow-xl hover:bg-secondary-accent transition duration-300">
+            فارسی / FA
+        </button>
+    </div>
+
+    <!-- Header / Hero Section (High Contrast and Modern) -->
+    <header class="pt-20 pb-12 mb-16 border-b border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-3/5 text-center md:text-left" data-align-container>
+                    <h1 class="text-6xl md:text-7xl font-extrabold text-white mb-4 tracking-tight" data-i18n="hero_name">Matian Jani</h1>
+                    <p class="text-3xl md:text-4xl text-accent-color font-light mb-8" data-i18n="hero_title">Project Management | Senior Graphic Designer</p>
+                    <p class="text-lg text-gray-400 max-w-3xl mb-10 text-justify" data-i18n="hero_summary">
+                        A highly effective cross-functional leader and Senior Graphic Designer, Matian Jani brings over four years of specialized experience in strategic project management and the development of visually groundbreaking designs for large-scale print and complex digital platforms. My expertise lies in synthesizing complex business requirements into elegant, high-impact creative solutions. I excel at leading diverse creative teams, streamlining workflows for maximum efficiency, and delivering projects that consistently exceed stakeholder expectations in terms of quality, timeliness, and budget adherence, driving measurable increases in market engagement and brand equity.
+                    </p>
+                    <div class="mt-10 text-base flex flex-wrap justify-center md:justify-start gap-8 text-gray-500 font-medium">
+                        <span data-i18n="contact_phone">📱 0918 538 3037</span>
+                        <span><a href="#" class="hover:text-accent-color transition">@Holding_Jani_ir</a></span>
+                        <span><a href="#" class="hover:text-accent-color transition">@SSAGHEZ_HOLDING JANI</a></span>
+                    </div>
+                </div>
+                <!-- Profile Image -->
+                <div class="md:w-2/5 flex justify-center md:justify-end">
+                    <div class="w-72 h-72 bg-gray-700 rounded-full flex items-center justify-center overflow-hidden border-4 border-secondary-accent shadow-2xl shadow-blue-500/50">
+                        <img src="https://placehold.co/288x288/1F2937/FFFFFF?text=PROFILE+IMAGE" alt="Matian Jani Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        
+        <!-- NEW SECTION: Mission and Vision -->
+        <section id="mission" class="mb-20">
+            <h2 class="section-title" data-i18n="section_mission_title">Mission & Corporate Vision</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Mission Card -->
+                <div class="bg-card-bg p-10 rounded-2xl shadow-2xl border-2 border-accent-color/50">
+                    <h3 class="text-4xl font-extrabold text-accent-color mb-4" data-i18n="mission_header">Our Core Mission</h3>
+                    <p class="text-lg text-gray-300 text-justify" data-i18n="mission_text">
+                        To redefine the intersection of creative design and strategic business management through innovative solutions. We commit to delivering not just visually compelling outputs, but measurable value that directly contributes to our clients' market leadership. Our mission encompasses fostering a culture of rigorous quality assurance, continuous learning, and ethical practice across all international and domestic engagements. We strive to be the definitive benchmark for advanced project execution in the creative industry.
+                    </p>
+                </div>
+                <!-- Vision Card -->
+                <div class="bg-card-bg p-10 rounded-2xl shadow-2xl border-2 border-highlight-purple/50">
+                    <h3 class="text-4xl font-extrabold text-highlight-purple mb-4" data-i18n="vision_header">Our 2030 Vision</h3>
+                    <p class="text-lg text-gray-300 text-justify" data-i18n="vision_text">
+                        By the year 2030, Holding Jani aims to be recognized as a globally integrated leader in Project Management and Design Innovation, operating across five continents. We envision a future where our proprietary project lifecycle methodology is adopted as a standard for efficiency and creative excellence worldwide. Our commitment is to empower a new generation of digital creators and managers, solidifying our position as a catalyst for industrial and cultural transformation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills and Experience Section (Expanded) -->
+        <section id="skills-experience" class="mb-20">
+            <h2 class="section-title" data-i18n="section_skills_title">Skills & Professional History</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <!-- Skills and Education Column -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-2xl lg:col-span-1 border border-gray-700">
+                    <h3 class="text-3xl font-bold mb-6 text-accent-color" data-i18n="skills_header">Core Skills Matrix</h3>
+                    
+                    <!-- Skill Items (Same structure, now part of a larger document) -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-white mb-2">
+                            <span data-i18n="skill_graphic_design">Strategic Graphic Design (90%)</span>
+                            <span class="text-sm">90%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-white mb-2">
+                            <span data-i18n="skill_typography">Advanced Typographical Hierarchy (87%)</span>
+                            <span class="text-sm">87%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 87%;"></div></div>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-white mb-2">
+                            <span data-i18n="skill_branding">Global Branding & Identity Development (95%)</span>
+                            <span class="text-sm">95%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-white mb-2">
+                            <span data-i18n="skill_print_digital">Integrated Print & Digital Media Production (84%)</span>
+                            <span class="text-sm">84%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 84%;"></div></div>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center text-white mb-2">
+                            <span data-i18n="skill_project_management">Agile Project Management & Risk Mitigation (92%)</span>
+                            <span class="text-sm">92%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-level" style="width: 92%;"></div></div>
+                    </div>
+
+                    <h3 class="text-3xl font-bold mt-10 mb-6 text-accent-color" data-i18n="education_header">Accredited Education</h3>
+                    <ul class="space-y-4 text-gray-300 text-base list-none">
+                        <li>
+                            <p class="font-bold text-white text-lg" data-i18n="edu_msc_title">MSc in Project Management - Strategic Focus</p>
+                            <p class="text-sm text-gray-400" data-i18n="edu_msc_org">University of Oxford, UK | Thesis: 'Adaptive Project Governance in Creative Industries'</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-white mt-4 text-lg" data-i18n="edu_bfa_title">BFA in Graphic Design - Advanced Visual Communication</p>
+                            <p class="text-sm text-gray-400" data-i18n="edu_bfa_org">Rhode Island School of Design (RISD), USA | Focus on Information Architecture</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-white mt-4 text-lg" data-i18n="edu_cert_title">Executive Certificate in Digital Media Strategy</p>
+                            <p class="text-sm text-gray-400" data-i18n="edu_cert_org">Harvard University Extension School, USA | Certification in Global Digital Campaigns</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Professional Experience Column (Expanded Content) -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-2xl lg:col-span-2 border border-gray-700">
+                    <h3 class="text-3xl font-bold mb-8 text-accent-color" data-i18n="experience_header">Executive Professional Experience</h3>
+                    
+                    <!-- Job 1 -->
+                    <div class="mb-10 p-6 bg-gray-800 rounded-xl border-l-4 border-accent-color shadow-lg">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-3">
+                            <h4 class="text-2xl font-bold text-white" data-i18n="job1_title">Senior Graphic Designer & Project Lead</h4>
+                            <span class="text-sm text-gray-400" data-i18n="job1_duration">June 2022 - May 2024 | Holding Jani | Tehran, Iran</span>
+                        </div>
+                        <p class="text-lg font-semibold text-secondary-accent mb-4" data-i18n="job1_company">RASAN Design, A Subsidiary of Holding Jani</p>
+                        <ul class="list-none pl-0 text-gray-300 space-y-4 text-base">
+                            <li class="border-b border-gray-700 pb-3" data-i18n="job1_desc1">
+                                **Strategic Branding Overhaul:** Spearheaded the complete overhaul of core corporate branding materials, marketing collateral, and essential digital assets (including high-fidelity UI/UX mockups), resulting in a documented **25% year-over-year increase** in client engagement metrics and lead conversion rates across primary digital channels.
+                            </li>
+                            <li class="border-b border-gray-700 pb-3" data-i18n="job1_desc2">
+                                **Cross-Functional Collaboration:** Acted as the primary liaison between the marketing, product development, and sales teams. Successfully translated abstract business objectives into tangible, visually appealing, and effective creative campaigns that were deployed across international markets.
+                            </li>
+                            <li data-i18n="job1_desc3">
+                                **Project Governance:** Instituted a robust, agile project management framework across the design department, successfully managing a pipeline of **15+ complex projects simultaneously**. This systematic approach ensured **zero critical delivery delays** over a two-year period while maintaining strict adherence to the company's rigorous brand guidelines and regulatory compliance standards.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="p-6 bg-gray-800 rounded-xl border-l-4 border-accent-color shadow-lg">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-3">
+                            <h4 class="text-2xl font-bold text-white" data-i18n="job2_title">Digital Communications Specialist</h4>
+                            <span class="text-sm text-gray-400" data-i18n="job2_duration">January 2020 - May 2022 | Company RASAN Design | Saqez, Iran</span>
+                        </div>
+                        <ul class="list-none pl-0 text-gray-300 space-y-4 text-base">
+                            <li class="border-b border-gray-700 pb-3" data-i18n="job2_desc1">
+                                **Digital Product Design:** Created and implemented responsive website and mobile application designs focused on optimizing user experience (UX) and interface (UI), which directly contributed to an increase in user engagement by over **20%** within the first fiscal quarter of deployment.
+                            </li>
+                            <li class="border-b border-gray-700 pb-3" data-i18n="job2_desc2">
+                                **Content Strategy Leadership:** Led the comprehensive redesign of the main corporate website infrastructure and content strategy, a pivotal project that resulted in a **30% increase in qualified web traffic** and demonstrably improved user feedback metrics on site navigation and accessibility.
+                            </li>
+                            <li data-i18n="job2_desc3">
+                                **Stakeholder Management:** Orchestrated high-level client presentations and workshops, effectively gathering critical feedback and leading refinement cycles to ensure the final design concepts were perfectly aligned with highly demanding client specifications and market penetration goals.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Key Projects and Portfolio Showcase -->
+        <section id="projects" class="mb-20">
+            <h2 class="section-title" data-i18n="section_projects_title">Key Projects & Portfolio Showcase</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-card-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/50 transition duration-500 border border-gray-700">
+                    <img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Project+Titan" alt="Project Titan Branding" class="w-full h-auto object-cover">
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold text-accent-color mb-2" data-i18n="project1_title">Project Titan: Global Rebranding Initiative</h4>
+                        <p class="text-sm text-gray-400 mb-3" data-i18n="project1_client">Client: Global Tech Consortium</p>
+                        <p class="text-sm text-gray-300 text-justify" data-i18n="project1_desc">A multi-phase project focused on modernizing the visual identity of a major technological conglomerate to facilitate expansion into emerging European and Asian markets. Delivered a comprehensive style guide and a library of 500+ scalable vector assets.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-card-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-purple-500/50 transition duration-500 border border-gray-700">
+                    <img src="https://placehold.co/400x250/8B5CF6/FFFFFF?text=E-commerce+Platform+UX" alt="E-commerce Platform UX" class="w-full h-auto object-cover">
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold text-highlight-purple mb-2" data-i18n="project2_title">E-commerce Platform UX/UI Optimization</h4>
+                        <p class="text-sm text-gray-400 mb-3" data-i18n="project2_client">Client: National Retail Chain</p>
+                        <p class="text-sm text-gray-300 text-justify" data-i18n="project2_desc">Executed a full UX audit and redesign of the client's high-traffic e-commerce platform. The project successfully reduced cart abandonment rates by 18% and improved overall conversion funnel efficiency through data-driven design decisions.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-card-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-yellow-500/50 transition duration-500 border border-gray-700">
+                    <img src="https://placehold.co/400x250/FACC15/000000?text=Corporate+Annual+Report" alt="Corporate Annual Report" class="w-full h-auto object-cover">
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-2" data-i18n="project3_title">Interactive Annual Report Design (2023)</h4>
+                        <p class="text-sm text-gray-400 mb-3" data-i18n="project3_client">Client: Financial Services Group</p>
+                        <p class="text-sm text-gray-300 text-justify" data-i18n="project3_desc">Designed a complex, interactive digital annual report focusing on information clarity and visualization. This included developing custom infographics and data representation models to simplify dense financial performance metrics for public and investor review.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block px-8 py-3 bg-white text-primary-bg font-bold rounded-full shadow-lg hover:bg-gray-200 transition duration-300" data-i18n="projects_cta">
+                    View Complete Portfolio & Case Studies
+                </a>
+            </div>
+        </section>
+
+        <!-- Business Webinars Section (Expanded) -->
+        <section id="webinars" class="mb-20">
+            <h2 class="section-title" data-i18n="section_webinars_title">Executive Business Webinars & Thought Leadership</h2>
+            <div class="bg-card-bg p-10 rounded-2xl shadow-2xl shadow-blue-500/20 flex flex-col md:flex-row items-center gap-8 border border-gray-700">
+                <div class="md:w-3/5">
+                    <h3 class="text-5xl font-extrabold text-secondary-accent mb-4">THE FUTURE OF WORK SERIES</h3>
+                    <p class="text-2xl text-white mb-6" data-i18n="webinar_motto">
+                        Empowering executives to synthesize creativity, technology, and strategic project management for unprecedented growth opportunities.
+                    </p>
+                    <p class="text-lg text-gray-400 mb-8 text-justify" data-i18n="webinar_description">
+                        Holding Jani (HOIDING JANI) is committed to fostering global innovation and continuous professional elevation. Our expert-led business webinars provide deep dives into cutting-edge industry trends—from integrating AI and machine learning into creative workflows to developing robust, sustainable project governance models compliant with international standards. These sessions are meticulously crafted to equip seasoned professionals and rising stars with the strategic foresight necessary to not only adapt to disruptive market forces but to actively shape the future business landscape, fundamentally transforming their professional efficacy and entire lifestyle trajectory.
+                    </p>
+                    <a href="#" class="inline-block px-10 py-4 bg-accent-color text-white font-bold text-lg rounded-full shadow-lg shadow-blue-500/40 hover:bg-secondary-accent transition duration-300 transform hover:scale-105" data-i18n="webinar_cta">
+                        Register for the Next Global Session
+                    </a>
+                </div>
+                <!-- Speaker Image Placeholder -->
+                <div class="md:w-2/5 flex justify-center relative">
+                    <div class="w-64 h-64 bg-gray-700 rounded-xl overflow-hidden border-4 border-secondary-accent shadow-xl">
+                        <img src="https://placehold.co/256x256/1F2937/FFFFFF?text=WEBINAR+SPEAKER" alt="Webinar Speaker" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coding Course Section (Expanded) -->
+        <section id="courses" class="mb-20">
+            <h2 class="section-title" data-i18n="section_courses_title">Advanced Education & Digital Creator Learning Tracks</h2>
+            <div class="bg-card-bg p-10 rounded-2xl shadow-2xl shadow-purple-500/20 text-center border border-gray-700">
+                <p class="text-sm text-gray-400 mb-2">Exclusive Program by Studio Shodwe</p>
+                <h3 class="text-6xl md:text-8xl font-extrabold text-white mb-4 tracking-tighter" style="letter-spacing: -2px;">MASTER THE DIGITAL DOMAIN</h3>
+                <p class="text-3xl md:text-5xl font-light text-purple-400 mb-8" data-i18n="course_tagline">Transforming Concepts into Code: Your Future Starts Now!</p>
+                
+                <div class="max-w-4xl mx-auto space-y-6 text-gray-300 text-lg">
+                    <p data-i18n="course_intro" class="text-justify">
+                        This is an immersive, project-based curriculum designed for professionals seeking mastery in digital creation and programming. Moving beyond basic concepts, the course provides deep knowledge of full-stack development methodologies, modern web architecture (React, Next.js), and scalable application deployment. Learn to build enterprise-grade websites and complex mobile applications from the ground up, utilizing cutting-edge tools that adhere to global industry standards for security and performance.
+                    </p>
+                    <p class="font-bold text-white text-xl" data-i18n="course_collaboration">Developed in collaboration with the Technical Architecture team at RASAN Design & the Innovation Lab at HOLDING GANI</p>
+                    <p class="pt-4 text-base" data-i18n="course_motto">
+                        The objective is simple: to push your technical and creative boundaries, enabling you to achieve the highest professional goals and seamlessly transition into the role of an elite digital creator and entrepreneur within the global tech ecosystem.
+                    </p>
+                </div>
+
+                <a href="#" class="mt-10 inline-block px-12 py-4 bg-white text-primary-bg font-bold text-xl rounded-full shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105" data-i18n="course_cta">
+                    Enroll in the Next Cohort
+                </a>
+            </div>
+        </section>
+
+        <!-- Hiring Section (Clean & Direct) -->
+        <section id="hiring" class="mb-20">
+            <h2 class="section-title" data-i18n="section_hiring_title">Global Career Opportunities & Talent Acquisition</h2>
+            <div class="bg-card-bg p-10 rounded-2xl shadow-2xl flex flex-col items-center text-center border border-gray-700">
+                <div class="mb-8">
+                    <h3 class="text-5xl font-extrabold text-white mb-3" data-i18n="hiring_title">We Are Hiring World-Class Talent!</h3>
+                    <p class="text-2xl font-serif italic text-accent-color" data-i18n="hiring_motto">Join our amazing, fast-paced Holding Jani team and shape the future.</p>
+                </div>
+
+                <div class="w-full max-w-2xl mb-8 p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-2xl font-semibold text-gray-300 mb-4 border-b border-gray-700 pb-2" data-i18n="hiring_positions_header">Critically Open Positions for Q4 2024:</h4>
+                    <ul class="text-xl space-y-3 text-white list-disc list-inside text-left" data-i18n-list>
+                        <li data-i18n="pos_digital_marketing">Digital Marketing Strategy Lead (Global Campaigns)</li>
+                        <li data-i18n="pos_graphic_designer">Senior Full-Stack UI/UX Designer</li>
+                        <li data-i18n="pos_content_creator">Head of Strategic Content Creation & Narrative Development</li>
+                        <li data-i18n="pos_data_analyst">Data Analyst (Focus on Performance & Conversion Metrics)</li>
+                        <li data-i18n="pos_project_manager">Agile Project Manager (PMP/Scrum Certification required)</li>
+                    </ul>
+                </div>
+                
+                <p class="text-lg text-gray-400 max-w-3xl mb-6 text-center text-justify" data-i18n="hiring_callout_text">
+                    We seek highly motivated individuals who thrive in a challenging, performance-driven environment. If you possess a pioneering spirit and a commitment to excellence, we invite you to explore the possibility of a career with Holding Jani, where your potential is limitless.
+                </p>
+
+                <a href="#" class="inline-block px-12 py-4 bg-accent-color text-white font-bold text-xl rounded-full shadow-lg shadow-blue-500/40 hover:bg-secondary-accent transition duration-300 transform hover:scale-105 mb-6" data-i18n="hiring_cta">
+                    Submit Application Today!
+                </a>
+                
+                <p class="text-lg text-gray-400 mt-4" data-i18n="hiring_send_resume">Please Direct All Resumes and Cover Letters to:</p>
+                <p class="text-2xl font-bold text-white">TALENT_ACQUISITION@SAGHEZ_HOLDING JANI.COM</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-card-bg mt-20 py-8 text-center border-t border-gray-800">
+        <p class="text-sm text-gray-500 mb-2" data-i18n="footer_contact_info">Global Contact Information & Headquarters:</p>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white font-semibold text-sm sm:text-base">
+            <span data-i18n="contact_phone_footer">📱 +98 918 538 3037 (Executive Line)</span>
+            <span>📧 info@HoldingJani.ir</span>
+            <span>@SSAGHEZ_HOLDING JANI (Official Telegram/X Channel)</span>
+        </div>
+        <p class="text-xs text-gray-600 mt-4" data-i18n="footer_copyright">
+            © 2024. All rights reserved globally to Matian Jani | Holding Jani. Proprietary Code.
+        </p>
+    </footer>
+
+    <!-- JavaScript for Language Switching (I18N) -->
+    <script>
+        const translations = {
+            'en': {
+                'dir': 'ltr',
+                'lang': 'en',
+                'toggle_text': 'فارسی / FA',
+                'title': 'Matian Jani | Project Management & Design',
+                
+                // HERO SECTION (EXPANDED)
+                'hero_name': 'Matian Jani',
+                'hero_title': 'Executive Project Management | Senior Graphic Designer',
+                'hero_summary': 'A highly effective cross-functional leader and Senior Graphic Designer, Matian Jani brings over four years of specialized experience in strategic project management and the development of visually groundbreaking designs for large-scale print and complex digital platforms. My expertise lies in synthesizing complex business requirements into elegant, high-impact creative solutions. I excel at leading diverse creative teams, streamlining workflows for maximum efficiency, and delivering projects that consistently exceed stakeholder expectations in terms of quality, timeliness, and budget adherence, driving measurable increases in market engagement and brand equity.',
+                'contact_phone': '📱 +98 918 538 3037 (Executive Line)',
+                
+                // MISSION & VISION (NEW SECTION)
+                'section_mission_title': 'Mission & Corporate Vision',
+                'mission_header': 'Our Core Mission',
+                'mission_text': 'To redefine the intersection of creative design and strategic business management through innovative solutions. We commit to delivering not just visually compelling outputs, but measurable value that directly contributes to our clients\' market leadership. Our mission encompasses fostering a culture of rigorous quality assurance, continuous learning, and ethical practice across all international and domestic engagements. We strive to be the definitive benchmark for advanced project execution in the creative industry.',
+                'vision_header': 'Our 2030 Vision',
+                'vision_text': 'By the year 2030, Holding Jani aims to be recognized as a globally integrated leader in Project Management and Design Innovation, operating across five continents. We envision a future where our proprietary project lifecycle methodology is adopted as a standard for efficiency and creative excellence worldwide. Our commitment is to empower a new generation of digital creators and managers, solidifying our position as a catalyst for industrial and cultural transformation.',
+
+                // SKILLS & EDUCATION (EXPANDED)
+                'section_skills_title': 'Skills & Professional History',
+                'skills_header': 'Core Skills Matrix',
+                'skill_graphic_design': 'Strategic Graphic Design (90%)',
+                'skill_typography': 'Advanced Typographical Hierarchy (87%)',
+                'skill_branding': 'Global Branding & Identity Development (95%)',
+                'skill_print_digital': 'Integrated Print & Digital Media Production (84%)',
+                'skill_project_management': 'Agile Project Management & Risk Mitigation (92%)',
+                'education_header': 'Accredited Education',
+                'edu_msc_title': 'MSc in Project Management - Strategic Focus',
+                'edu_msc_org': 'University of Oxford, UK | Thesis: \'Adaptive Project Governance in Creative Industries\'',
+                'edu_bfa_title': 'BFA in Graphic Design - Advanced Visual Communication',
+                'edu_bfa_org': 'Rhode Island School of Design (RISD), USA | Focus on Information Architecture',
+                'edu_cert_title': 'Executive Certificate in Digital Media Strategy',
+                'edu_cert_org': 'Harvard University Extension School, USA | Certification in Global Digital Campaigns',
+
+                // EXPERIENCE (EXPANDED)
+                'experience_header': 'Executive Professional Experience',
+                'job1_title': 'Senior Graphic Designer & Project Lead',
+                'job1_duration': 'June 2022 - May 2024 | Holding Jani | Tehran, Iran',
+                'job1_company': 'RASAN Design, A Subsidiary of Holding Jani',
+                'job1_desc1': '**Strategic Branding Overhaul:** Spearheaded the complete overhaul of core corporate branding materials, marketing collateral, and essential digital assets (including high-fidelity UI/UX mockups), resulting in a documented **25% year-over-year increase** in client engagement metrics and lead conversion rates across primary digital channels.',
+                'job1_desc2': '**Cross-Functional Collaboration:** Acted as the primary liaison between the marketing, product development, and sales teams. Successfully translated abstract business objectives into tangible, visually appealing, and effective creative campaigns that were deployed across international markets.',
+                'job1_desc3': '**Project Governance:** Instituted a robust, agile project management framework across the design department, successfully managing a pipeline of **15+ complex projects simultaneously**. This systematic approach ensured **zero critical delivery delays** over a two-year period while maintaining strict adherence to the company\'s rigorous brand guidelines and regulatory compliance standards.',
+                'job2_title': 'Digital Communications Specialist',
+                'job2_duration': 'January 2020 - May 2022 | Company RASAN Design | Saqez, Iran',
+                'job2_desc1': '**Digital Product Design:** Created and implemented responsive website and mobile application designs focused on optimizing user experience (UX) and interface (UI), which directly contributed to an increase in user engagement by over **20%** within the first fiscal quarter of deployment.',
+                'job2_desc2': '**Content Strategy Leadership:** Led the comprehensive redesign of the main corporate website infrastructure and content strategy, a pivotal project that resulted in a **30% increase in qualified web traffic** and demonstrably improved user feedback metrics on site navigation and accessibility.',
+                'job2_desc3': '**Stakeholder Management:** Orchestrated high-level client presentations and workshops, effectively gathering critical feedback and leading refinement cycles to ensure the final design concepts were perfectly aligned with highly demanding client specifications and market penetration goals.',
+
+                // PROJECTS (NEW SECTION)
+                'section_projects_title': 'Key Projects & Portfolio Showcase',
+                'project1_title': 'Project Titan: Global Rebranding Initiative',
+                'project1_client': 'Client: Global Tech Consortium',
+                'project1_desc': 'A multi-phase project focused on modernizing the visual identity of a major technological conglomerate to facilitate expansion into emerging European and Asian markets. Delivered a comprehensive style guide and a library of 500+ scalable vector assets.',
+                'project2_title': 'E-commerce Platform UX/UI Optimization',
+                'project2_client': 'Client: National Retail Chain',
+                'project2_desc': 'Executed a full UX audit and redesign of the client\'s high-traffic e-commerce platform. The project successfully reduced cart abandonment rates by 18% and improved overall conversion funnel efficiency through data-driven design decisions.',
+                'project3_title': 'Interactive Annual Report Design (2023)',
+                'project3_client': 'Client: Financial Services Group',
+                'project3_desc': 'Designed a complex, interactive digital annual report focusing on information clarity and visualization. This included developing custom infographics and data representation models to simplify dense financial performance metrics for public and investor review.',
+                'projects_cta': 'View Complete Portfolio & Case Studies',
+                
+                // WEBINARS (EXPANDED)
+                'section_webinars_title': 'Executive Business Webinars & Thought Leadership',
+                'webinar_motto': 'Empowering executives to synthesize creativity, technology, and strategic project management for unprecedented growth opportunities.',
+                'webinar_description': 'Holding Jani (HOIDING JANI) is committed to fostering global innovation and continuous professional elevation. Our expert-led business webinars provide deep dives into cutting-edge industry trends—from integrating AI and machine learning into creative workflows to developing robust, sustainable project governance models compliant with international standards. These sessions are meticulously crafted to equip seasoned professionals and rising stars with the strategic foresight necessary to not only adapt to disruptive market forces but to actively shape the future business landscape, fundamentally transforming their professional efficacy and entire lifestyle trajectory.',
+                'webinar_cta': 'Register for the Next Global Session',
+
+                // COURSES (EXPANDED)
+                'section_courses_title': 'Advanced Education & Digital Creator Learning Tracks',
+                'course_tagline': 'Transforming Concepts into Code: Your Future Starts Now!',
+                'course_intro': 'This is an immersive, project-based curriculum designed for professionals seeking mastery in digital creation and programming. Moving beyond basic concepts, the course provides deep knowledge of full-stack development methodologies, modern web architecture (React, Next.js), and scalable application deployment. Learn to build enterprise-grade websites and complex mobile applications from the ground up, utilizing cutting-edge tools that adhere to global industry standards for security and performance.',
+                'course_collaboration': 'Developed in collaboration with the Technical Architecture team at RASAN Design & the Innovation Lab at HOLDING GANI',
+                'course_motto': 'The objective is simple: to push your technical and creative boundaries, enabling you to achieve the highest professional goals and seamlessly transition into the role of an elite digital creator and entrepreneur within the global tech ecosystem.',
+                'course_cta': 'Enroll in the Next Cohort',
+
+                // HIRING (EXPANDED)
+                'section_hiring_title': 'Global Career Opportunities & Talent Acquisition',
+                'hiring_title': 'We Are Hiring World-Class Talent!',
+                'hiring_motto': 'Join our amazing, fast-paced Holding Jani team and shape the future.',
+                'hiring_positions_header': 'Critically Open Positions for Q4 2024:',
+                'pos_digital_marketing': 'Digital Marketing Strategy Lead (Global Campaigns)',
+                'pos_graphic_designer': 'Senior Full-Stack UI/UX Designer',
+                'pos_content_creator': 'Head of Strategic Content Creation & Narrative Development',
+                'pos_data_analyst': 'Data Analyst (Focus on Performance & Conversion Metrics)',
+                'pos_project_manager': 'Agile Project Manager (PMP/Scrum Certification required)',
+                'hiring_cta': 'Submit Application Today!',
+                'hiring_send_resume': 'Please Direct All Resumes and Cover Letters to:',
+                'hiring_callout_text': 'We seek highly motivated individuals who thrive in a challenging, performance-driven environment. If you possess a pioneering spirit and a commitment to excellence, we invite you to explore the possibility of a career with Holding Jani, where your potential is limitless.',
+
+
+                // FOOTER
+                'footer_contact_info': 'Global Contact Information & Headquarters:',
+                'contact_phone_footer': '📱 +98 918 538 3037 (Executive Line)',
+                'footer_copyright': '© 2024. All rights reserved globally to Matian Jani | Holding Jani. Proprietary Code.',
+            },
+            'fa': {
+                'dir': 'rtl',
+                'lang': 'fa',
+                'toggle_text': 'English / EN',
+                'title': 'متین جانی | مدیریت پروژه و طراحی اجرایی',
+                
+                // HERO SECTION (EXPANDED)
+                'hero_name': 'متین جانی',
+                'hero_title': 'مدیریت پروژه اجرایی | طراح ارشد گرافیک',
+                'hero_summary': 'متین جانی، یک رهبر موثر و چندوظیفه‌ای و طراح ارشد گرافیک، با بیش از چهار سال تجربه تخصصی در مدیریت استراتژیک پروژه‌ها و توسعه طرح‌های بصری نوآورانه برای پلتفرم‌های دیجیتال پیچیده و رسانه‌های چاپی در مقیاس بزرگ، در این حوزه فعالیت می‌کند. تخصص من در ترکیب الزامات پیچیده کسب‌وکار و تبدیل آن‌ها به راه‌حل‌های خلاقانه، زیبا و با تاثیرگذاری بالا نهفته است. من در رهبری تیم‌های خلاق متنوع، ساده‌سازی گردش کار برای حداکثر بهره‌وری، و تحویل پروژه‌هایی که به طور مستمر از انتظارات ذینفعان فراتر می‌روند (از نظر کیفیت، زمان‌بندی و پایبندی به بودجه) برتری دارم، که منجر به افزایش قابل اندازه‌گیری تعامل بازار و ارزش برند می‌شود.',
+                'contact_phone': '📱 ۰۹۱۸ ۵۳۸ ۳۰۳۷ (خط ویژه اجرایی)',
+
+                // MISSION & VISION (NEW SECTION)
+                'section_mission_title': 'بیانیه ماموریت و چشم‌انداز شرکتی',
+                'mission_header': 'ماموریت اصلی ما',
+                'mission_text': 'ماموریت ما این است که تقاطع طراحی خلاق و مدیریت استراتژیک کسب‌وکار را از طریق راه‌حل‌های نوآورانه مجدداً تعریف کنیم. ما متعهد به ارائه نه تنها خروجی‌های بصری جذاب، بلکه ارزش قابل اندازه‌گیری هستیم که مستقیماً به رهبری بازار مشتریانمان کمک می‌کند. ماموریت ما شامل پرورش فرهنگی از تضمین کیفیت دقیق، یادگیری مستمر، و عمل اخلاقی در تمام تعاملات بین‌المللی و داخلی است. ما تلاش می‌کنیم تا معیار قطعی اجرای پروژه‌های پیشرفته در صنعت خلاق باشیم.',
+                'vision_header': 'چشم‌انداز ۲۰۳۰ ما',
+                'vision_text': 'تا سال ۲۰۳۰، هلدینگ جانی قصد دارد به عنوان یک رهبر یکپارچه جهانی در مدیریت پروژه و نوآوری طراحی، که در پنج قاره فعالیت می‌کند، شناخته شود. ما آینده‌ای را متصوریم که در آن متدولوژی اختصاصی چرخه عمر پروژه ما به عنوان یک استاندارد برای کارایی و برتری خلاقانه در سراسر جهان پذیرفته شود. تعهد ما توانمندسازی نسل جدیدی از سازندگان و مدیران دیجیتال است، که موقعیت ما را به عنوان کاتالیزوری برای تحول صنعتی و فرهنگی تثبیت می‌کند.',
+                
+                // SKILLS & EDUCATION (EXPANDED)
+                'section_skills_title': 'مهارت‌ها و سوابق حرفه‌ای',
+                'skills_header': 'ماتریس مهارت‌های اصلی',
+                'skill_graphic_design': 'طراحی گرافیک استراتژیک (۹۰٪)',
+                'skill_typography': 'سلسله مراتب تایپوگرافی پیشرفته (۸۷٪)',
+                'skill_branding': 'توسعه برندینگ و هویت جهانی (۹۵٪)',
+                'skill_print_digital': 'تولید یکپارچه رسانه‌های چاپی و دیجیتال (۸۴٪)',
+                'skill_project_management': 'مدیریت پروژه چابک و کاهش ریسک (۹۲٪)',
+                'education_header': 'تحصیلات معتبر',
+                'edu_msc_title': 'کارشناسی ارشد مدیریت پروژه (MSc) - تمرکز استراتژیک',
+                'edu_msc_org': 'دانشگاه آکسفورد، انگلستان | پایان‌نامه: «حاکمیت پروژه تطبیقی در صنایع خلاق»',
+                'edu_bfa_title': 'کارشناسی هنرهای زیبا در طراحی گرافیک (BFA) - ارتباط بصری پیشرفته',
+                'edu_bfa_org': 'مدرسه طراحی رود آیلند (RISD)، آمریکا | تمرکز بر معماری اطلاعات',
+                'edu_cert_title': 'گواهی اجرایی در استراتژی رسانه‌های دیجیتال',
+                'edu_cert_org': 'مدرسه توسعه دانشگاه هاروارد، آمریکا | گواهینامه در کمپین‌های دیجیتال جهانی',
+
+                // EXPERIENCE (EXPANDED)
+                'experience_header': 'سوابق حرفه‌ای اجرایی',
+                'job1_title': 'طراح ارشد گرافیک و سرپرست پروژه',
+                'job1_duration': 'ژوئن ۲۰۲۲ - می ۲۰۲۴ | هلدینگ جانی | تهران، ایران',
+                'job1_company': 'RASAN Design، زیرمجموعه هلدینگ جانی',
+                'job1_desc1': '**بازنگری استراتژیک برندینگ:** رهبری بازسازی کامل مواد اصلی برندینگ شرکتی، وثیقه‌های بازاریابی و دارایی‌های دیجیتال ضروری (از جمله ماک‌آپ‌های UI/UX با کیفیت بالا)، که منجر به افزایش مستند شده **۲۵ درصدی سال به سال** در معیارهای تعامل مشتری و نرخ تبدیل سرنخ در کانال‌های دیجیتال اصلی شد.',
+                'job1_desc2': '**همکاری میان‌وظیفه‌ای:** به عنوان رابط اصلی بین تیم‌های بازاریابی، توسعه محصول و فروش عمل کردم. با موفقیت اهداف انتزاعی کسب‌وکار را به کمپین‌های خلاقانه ملموس، جذاب بصری و موثر تبدیل کردم که در بازارهای بین‌المللی مستقر شدند.',
+                'job1_desc3': '**حاکمیت پروژه:** یک چارچوب مدیریت پروژه چابک و قوی در سراسر بخش طراحی ایجاد کردم، با مدیریت موفقیت‌آمیز خط لوله **بیش از ۱۵ پروژه پیچیده به طور همزمان**. این رویکرد سیستماتیک **صفر تأخیر بحرانی در تحویل** را در طی یک دوره دو ساله تضمین کرد و در عین حال به دستورالعمل‌های سختگیرانه برند و استانداردهای انطباق قانونی شرکت پایبند بود.',
+                'job2_title': 'متخصص ارتباطات دیجیتال',
+                'job2_duration': 'ژانویه ۲۰۲۰ - می ۲۰۲۲ | شرکت RASAN Design | سقز، ایران',
+                'job2_desc1': '**طراحی محصول دیجیتال:** ایجاد و پیاده‌سازی طرح‌های وب‌سایت و برنامه‌های موبایل واکنش‌گرا با تمرکز بر بهینه‌سازی تجربه کاربری (UX) و رابط کاربری (UI)، که مستقیماً به افزایش تعامل کاربر بیش از **۲۰٪** در اولین سه‌ماهه مالی استقرار کمک کرد.',
+                'job2_desc2': '**رهبری استراتژی محتوا:** رهبری بازطراحی جامع زیرساخت وب‌سایت اصلی شرکت و استراتژی محتوا، یک پروژه محوری که منجر به **۳۰٪ افزایش در ترافیک واجد شرایط وب** و بهبود قابل مشاهده معیارهای بازخورد کاربران در مورد ناوبری و دسترسی به سایت شد.',
+                'job2_desc3': '**مدیریت ذینفعان:** سازماندهی ارائه ها و کارگاه‌های سطح بالا برای مشتریان، جمع‌آوری موثر بازخوردهای حیاتی و هدایت چرخه‌های پالایش برای اطمینان از همسویی کامل مفاهیم طراحی نهایی با مشخصات بسیار سخت‌گیرانه مشتری و اهداف نفوذ به بازار.',
+
+                // PROJECTS (NEW SECTION)
+                'section_projects_title': 'پروژه‌های کلیدی و ویترین نمونه کارها',
+                'project1_title': 'پروژه تایتان: ابتکار جهانی بازآفرینی برند',
+                'project1_client': 'مشتری: کنسرسیوم جهانی فناوری',
+                'project1_desc': 'یک پروژه چندمرحله‌ای با تمرکز بر مدرن‌سازی هویت بصری یک شرکت بزرگ فناوری برای تسهیل گسترش به بازارهای نوظهور اروپایی و آسیایی. ارائه یک راهنمای جامع سبک و کتابخانه‌ای از بیش از ۵۰۰ دارایی وکتور مقیاس‌پذیر.',
+                'project2_title': 'بهینه‌سازی UX/UI پلتفرم تجارت الکترونیک',
+                'project2_client': 'مشتری: زنجیره خرده‌فروشی ملی',
+                'project2_desc': 'اجرای یک ممیزی کامل UX و بازطراحی پلتفرم تجارت الکترونیک با ترافیک بالا مشتری. این پروژه با موفقیت نرخ رهاسازی سبد خرید را ۱۸٪ کاهش داد و کارایی کلی قیف تبدیل را از طریق تصمیم‌گیری‌های طراحی مبتنی بر داده بهبود بخشید.',
+                'project3_title': 'طراحی گزارش سالانه تعاملی (۲۰۲۳)',
+                'project3_client': 'مشتری: گروه خدمات مالی',
+                'project3_desc': 'طراحی یک گزارش سالانه دیجیتال پیچیده و تعاملی با تمرکز بر شفافیت و بصری‌سازی اطلاعات. این شامل توسعه اینفوگرافیک‌های سفارشی و مدل‌های نمایش داده برای ساده‌سازی معیارهای عملکرد مالی متراکم برای بررسی عمومی و سرمایه‌گذاران بود.',
+                'projects_cta': 'مشاهده نمونه کارها و مطالعات موردی کامل',
+                
+                // WEBINARS (EXPANDED)
+                'section_webinars_title': 'وبینارهای کسب و کار اجرایی و رهبری فکری',
+                'webinar_motto': 'توانمندسازی مدیران اجرایی برای ترکیب خلاقیت، فناوری و مدیریت پروژه استراتژیک برای فرصت‌های رشد بی‌سابقه.',
+                'webinar_description': 'هلدینگ جانی (HOIDING JANI) متعهد به تقویت نوآوری جهانی و ارتقای مداوم حرفه‌ای است. وبینارهای کسب‌وکار ما که توسط کارشناسان رهبری می‌شوند، به بررسی عمیق روندهای پیشگام صنعت می‌پردازند—از ادغام هوش مصنوعی و یادگیری ماشین در جریان‌های کاری خلاقانه تا توسعه مدل‌های حاکمیت پروژه پایدار و قوی مطابق با استانداردهای بین‌المللی. این جلسات به دقت طراحی شده‌اند تا متخصصان باتجربه و ستاره‌های در حال ظهور را به بینش استراتژیک لازم برای نه تنها سازگاری با نیروهای مخرب بازار، بلکه فعالانه شکل دادن به چشم‌انداز آینده کسب‌وکار مجهز کنند و اثربخشی حرفه‌ای و کل مسیر سبک زندگی آنها را متحول سازند.',
+                'webinar_cta': 'ثبت‌نام در جلسه جهانی بعدی',
+
+                // COURSES (EXPANDED)
+                'section_courses_title': 'مسیرهای یادگیری آموزش پیشرفته و سازنده دیجیتال',
+                'course_tagline': 'تبدیل مفاهیم به کد: آینده شما همین حالا آغاز می‌شود!',
+                'course_intro': 'این یک برنامه درسی همه‌جانبه و مبتنی بر پروژه است که برای متخصصانی که به دنبال تسلط در ساخت دیجیتال و برنامه‌نویسی هستند، طراحی شده است. این دوره فراتر از مفاهیم اولیه، دانش عمیقی از متدولوژی‌های توسعه فول-استک، معماری مدرن وب (React, Next.js) و استقرار برنامه‌های کاربردی مقیاس‌پذیر را ارائه می‌دهد. ساخت وب‌سایت‌های در سطح سازمانی و برنامه‌های موبایل پیچیده را از ابتدا، با استفاده از ابزارهای پیشرفته که مطابق با استانداردهای جهانی صنعت برای امنیت و عملکرد هستند، بیاموزید.',
+                'course_collaboration': 'توسعه یافته با همکاری تیم معماری فنی در RASAN Design و آزمایشگاه نوآوری در HOLDING GANI',
+                'course_motto': 'هدف ساده است: عبور از مرزهای فنی و خلاقانه شما، تا شما را قادر سازد به بالاترین اهداف حرفه‌ای دست یابید و به طور یکپارچه به نقش یک سازنده دیجیتال نخبه و کارآفرین در اکوسیستم جهانی فناوری منتقل شوید.',
+                'course_cta': 'ثبت‌نام در دوره بعدی',
+
+                // HIRING (EXPANDED)
+                'section_hiring_title': 'فرصت‌های شغلی جهانی و جذب استعداد',
+                'hiring_title': 'ما در حال استخدام استعدادهای در سطح جهانی هستیم!',
+                'hiring_motto': 'به تیم شگفت‌انگیز و پرشتاب هلدینگ جانی بپیوندید و آینده را شکل دهید.',
+                'hiring_positions_header': 'موقعیت‌های شغلی باز حیاتی برای سه‌ماهه چهارم ۲۰۲۴:',
+                'pos_digital_marketing': 'سرپرست استراتژی بازاریابی دیجیتال (کمپین‌های جهانی)',
+                'pos_graphic_designer': 'طراح ارشد UI/UX فول-استک',
+                'pos_content_creator': 'رئیس تولید محتوای استراتژیک و توسعه روایت',
+                'pos_data_analyst': 'تحلیلگر داده (تمرکز بر معیارهای عملکرد و تبدیل)',
+                'pos_project_manager': 'مدیر پروژه چابک (نیاز به گواهینامه PMP/Scrum)',
+                'hiring_cta': 'همین امروز درخواست خود را ارسال کنید!',
+                'hiring_send_resume': 'لطفاً کلیه رزومه‌ها و نامه‌های انگیزشی را به آدرس زیر ارسال کنید:',
+                'hiring_callout_text': 'ما به دنبال افراد بسیار با انگیزه‌ای هستیم که در یک محیط چالش‌برانگیز و مبتنی بر عملکرد رشد می‌کنند. اگر روحیه پیشگامی و تعهد به تعالی دارید، از شما دعوت می‌کنیم تا فرصت شغلی با هلدینگ جانی را بررسی کنید، جایی که پتانسیل شما نامحدود است.',
+
+                // FOOTER
+                'footer_contact_info': 'اطلاعات تماس جهانی و دفتر مرکزی:',
+                'contact_phone_footer': '📱 ۰۹۱۸ ۵۳۸ ۳۰۳۷ (خط ویژه اجرایی)',
+                'footer_copyright': '© ۲۰۲۴. کلیه حقوق جهانی برای متین جانی | هلدینگ جانی محفوظ است. کد اختصاصی.',
+            }
+        };
+
+        let currentLang = 'en'; // Start in English
+
+        // Function to update the DOM based on the current language
+        function updateContent(lang) {
+            const data = translations[lang];
+            
+            // 1. Update Direction and Language
+            document.documentElement.setAttribute('lang', data.lang);
+            document.documentElement.setAttribute('dir', data.dir);
+            
+            // 2. Update all i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (data[key] !== undefined) {
+                    // Check if content contains strong tags (for bolding inside text)
+                    if (data[key].includes('**')) {
+                        // Simple Markdown to HTML conversion for bold text
+                        let htmlContent = data[key].replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        element.innerHTML = htmlContent;
+                    } else {
+                        element.textContent = data[key];
+                    }
+                }
+            });
+
+            // 3. Update the list alignment for RTL in hiring section
+            const hiringList = document.querySelector('[data-i18n-list]');
+            if (hiringList) {
+                if (data.dir === 'rtl') {
+                    hiringList.classList.remove('text-left');
+                    hiringList.classList.add('text-right');
+                } else {
+                    hiringList.classList.remove('text-right');
+                    hiringList.classList.add('text-left');
+                }
+            }
+
+
+            // 4. Update the section-title::after position (CSS handles most, but ensuring consistency)
+            const style = document.documentElement.style;
+            if (data.dir === 'rtl') {
+                style.setProperty('--title-after-right', '0');
+                style.setProperty('--title-after-left', 'auto');
+            } else {
+                style.setProperty('--title-after-right', 'auto');
+                style.setProperty('--title-after-left', '0');
+            }
+
+            // 5. Update Toggle Button Text
+            document.getElementById('lang-toggle').textContent = data.toggle_text;
+        }
+
+        // Language toggle function
+        function changeLanguage() {
+            currentLang = currentLang === 'en' ? 'fa' : 'en';
+            updateContent(currentLang);
+        }
+
+        // Initialize content on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent(currentLang);
+            
+            // Fix alignment on initial load for LTR/RTL pseudo elements
+            const style = document.documentElement.style;
+            style.setProperty('--title-after-right', 'auto');
+            style.setProperty('--title-after-left', '0');
+        });
+    </script>
+</body>
+</html>

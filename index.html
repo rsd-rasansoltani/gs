@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Matian Jani | Project Management & Design</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#0A0A0A', // Ultra Dark Background
-                        'card-bg': '#1F2937',   // Dark Slate Card Background
-                        'accent-color': '#3B82F6', // Modern Blue Accent
-                        'secondary-accent': '#60A5FA',
-                        'highlight-purple': '#8B5CF6', // For a richer color scheme
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'Tahoma', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Global Styles for an Advanced Holding Company Look */
-        body {
-            /* Subtle dark gradient for depth */
-            background: linear-gradient(135deg, #0A0A0A 0%, #171717 100%);
-            color: #E5E7EB; /* Light gray text */
-            font-family: 'Tahoma', 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-            display: inline-block;
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800; /* font-extrabold */
-            color: #FFFFFF;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0; 
-            width: 75px;
-            height: 5px;
-            background-color: #3B82F6;
-            border-radius: 9999px;
-            transition: all 0.3s;
-        }
-        [dir="rtl"] .section-title::after {
-            left: auto;
-            right: 0;
-        }
-        .skill-bar {
-            height: 10px;
-            border-radius: 9999px;
-            background-color: #374151; /* Gray-700 */
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(90deg, #3B82F6, #60A5FA);
-            transition: width 1s ease-in-out;
-        }
-        .text-justified {
-            text-align: justify;
-            hyphens: auto;
-        }
-    </style>
-</head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>Matian Jani | Project Management & Design</title>
+
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+'primary-bg': '#0A0A0A',
+'card-bg': '#1F2937',
+'text-strong': '#F9FAFB',
+'text-muted': '#9CA3AF',
+'accent-color': '#4B5563',
+'secondary-accent': '#6B7280',
+'highlight-line': '#A9A9A9',
+},
+fontFamily: { sans: ['Inter', 'Tahoma', 'sans-serif'] },
+boxShadow: { 'dark-elegant': '0 8px 30px -5px rgba(0,0,0,0.4)' }
+}
+}
+}
+</script>
+
+
+<style>
+:root{
+--bg: #0A0A0A; --muted: #9CA3AF; --card: #1F2937; --text: #F9FAFB;
+}
+html{scroll-behavior:smooth;font-size:clamp(14px,1.1vw,18px)}
+body{background:linear-gradient(135deg,var(--bg) 0%,#171717 100%);color:var(--text);font-family:Inter, Tahoma, sans-serif;min-height:100vh}
+
+
+/* Section title */
+.section-title{position:relative;display:inline-block;font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:1.5rem}
+.section-title::after{content:'';position:absolute;bottom:0;left:0;width:120px;height:6px;background:linear-gradient(90deg,#6B7280 0%,#A9A9A9 100%);border-radius:9999px;box-shadow:inset 0 2px 5px rgba(0,0,0,.5)}
+[dir="rtl"] .section-title::after{left:auto;right:0}
+
+
+/* card */
+.dark-card{background-color:var(--card);border:1px solid #374151;border-radius:12px;box-shadow:0 8px 30px -8px rgba(0,0,0,.6);transition:transform .28s,box-shadow .28s}
+.dark-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px -20px rgba(0,0,0,.8)}
+
+
+/* skill bar */
+.skill-bar{height:12px;border-radius:9999px;background:#374151;overflow:hidden}
+.skill-level{height:100%;background:linear-gradient(90deg,#6B7280,#9CA3AF);width:0%;transition:width 1.2s cubic-bezier(.2,.9,.3,1.2)}
+
+
+/* small utilities */
+.glass{backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04)}
+
+
+/* responsive title center on very small screens */
+@media (max-width:480px){.section-title{font-size:1.5rem}.section-title::after{left:50%;transform:translateX(-50%);width:80px}}
+
+
+/* accessible focus */
+:focus{outline:2px solid #6B7280;outline-offset:3px}
+
+
+/* light mode support */
+@media (prefers-color-scheme:light){:root{--bg:#F9FAFB;--card:#F3F4F6;--text:#111827;--muted:#6B7280}}
+</style>
+</head>>
 <body class="antialiased">
 
     <!-- Language Toggle Button -->
